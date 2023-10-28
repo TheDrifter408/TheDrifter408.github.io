@@ -1,0 +1,241 @@
+/* CSS RESET */
+@import url('https://fonts.googleapis.com/css2?family=Kreon:wght@600&family=Ubuntu:wght@500&display=swap');
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+/* background container */
+/* setting the text colors */
+body {
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
+}
+/* Main Content */
+.link {
+    color: var(--clr-neutral);
+    text-decoration: none;
+    transition: transform 300ms ease-in-out;
+}
+.link:hover {
+    cursor: pointer;
+    transform: translateX(-0.5rem);
+}
+/* For images in boxes */
+.img {
+    border: 1px solid var(--clr-neutral);
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 15rem;
+    height: 15rem;
+    transition: transform 300ms ease-in-out;
+}
+.img:hover {
+    transform: translateY(-1rem);
+}
+/* special image case */
+.ux-icon {
+    padding: 0;
+    height: 10rem;
+    width: 10rem;
+}
+/* Header classes */
+header {
+    box-shadow: 0 0.15em 0.5em var(--clr-neutral);
+    border-radius: 0.55rem;
+    margin-top:0;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-500);
+    position: relative;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+header a {
+    color: var(--clr-neutral);
+    text-decoration: none;
+}
+.btn {
+    position: absolute;
+    right:0;
+    border-radius: 1rem;
+    margin:0;
+    padding: 0.5rem 0.6rem;
+    background-color: var(--clr-neutral);
+    color:var(--clr-primary);
+    font-family: var(--ff-body);
+    font-weight: 500;
+    transition: background-color 1.2s color 1.2s;
+}
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--clr-primary);
+    color: var(--clr-neutral);
+}
+/* cta and card classes */
+.cta span {
+    font-size: var(--fs-700);
+}
+.card__container {
+    display: grid;
+    place-items: center;
+    align-items: center;
+    min-height: 70vh;
+}
+.card__container:nth-child(1) {
+    text-align: center;
+}
+.card {
+    margin:0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    display:grid;
+    gap: 1rem;
+    font-size: var(--fs-500);
+}
+.card span {
+    display: block;
+    font-family: var(--ff-body);
+    padding: 0.5rem 0rem;
+}
+.card p {
+    padding:0;
+    margin:0;
+    font-family: var(--ff-body);
+}
+.card h1 {
+    text-align: center;
+    font-family: var(--ff-heading);
+    font-size: var(--fs-600);
+    font-weight: var(--fw-400);
+}
+.card__content {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    font-family: var(--ff-body);
+}
+.card__content p {
+    font-size: var(--fs-600);
+}
+.card__content_images {
+    display:flex;
+    justify-content: center;
+    gap: 1rem;
+}
+.box-image {
+    width: 10rem;
+    height: 10rem;
+}
+.card__hero {
+    margin:0;
+    width: 20rem;
+    height: 20rem;
+    position:relative;
+}
+.hero-image {
+    margin:0;
+    position: absolute;
+    right:0;
+    top:0;
+}
+.hero-scribble {
+    left:10px;
+    position: absolute;
+    bottom:25px;
+    transform:rotate(90deg);
+}
+.flex-reverse {
+    flex-direction: row-reverse;
+}
+.display-grid {
+    display:grid;
+}
+.card__list {
+    display: flex;
+    gap: 1rem;
+}
+.card__list li {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-family: var(--ff-body);
+    list-style-type: none;
+}
+.card__list li img {
+    width: 2rem;
+    height: 2rem;
+}
+/*Footer */
+.footer {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    font-family: var(--ff-heading);
+}
+/* Js animation classes */
+.hidden {
+    filter: blur(3px);
+    transform: translateX(-100%);
+    transition: all 1.2s;
+}
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}
+.show {
+    filter:blur(0);
+    transform:translateX(0);
+}
+/* Scrollbar edits */
+::-webkit-scrollbar {
+    width:0.5rem;
+}
+::-webkit-scrollbar-track {
+    background-color: var(--clr-neutral);
+    border-radius: 1rem;
+    margin-block: 0.5rem;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-primary);
+    width: 1rem;
+}
+/* Dark Mode */
+.dark {
+    background-color: var(--clr-primary-dark);
+    color: var(--clr-neutral-dark);
+}
+.dark svg {
+    fill: var(--clr-neutral-dark);
+    stroke: var(--clr-neutral-dark);
+}
+.dark a {
+    color: var(--clr-neutral-dark);
+}
+:root {
+    --ff-body:'Ubuntu',sans-serif;
+    --ff-heading:'Kreon',serif;
+    --fw-400:400;
+    --fw-500:500;
+    --fw-700:700;
+    --fs-400:1rem;
+    --fs-500:1.25rem;
+    --fs-600:2rem;
+    --fs-700:2.5rem; 
+
+    /* dark mode colors */
+    --clr-primary-dark: hsl(222, 43%, 9%);
+    --clr-neutral-dark: hsl(0, 0%, 100%);
+    /* light mode colors */
+    --clr-neutral: hsl(13, 90%, 4%);
+    --clr-primary: hsl(0, 0%, 100%);
+}
